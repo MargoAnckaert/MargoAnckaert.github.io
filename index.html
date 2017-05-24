@@ -8,6 +8,7 @@
 	<script src="hammer.min.js"></script>
 	<script src="hammer-time.min.js"></script>
 	<script src="Game.js"></script>
+	<script src="db.js"> </script>
 	<link rel="stylesheet" href="Game.css">
 	<link rel="shortcut icon" href="Img/spaceMonsters3.jpg">
 	<link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet"> 
@@ -24,7 +25,10 @@
 			<li>Pijltje omhoog - Vuur</li>
 			<li>Pijltje Links - Bewegen Links</li>
 			<li>Pijltje Rechts - Bewegen Rechts</li>
+			<li> Naam: <input placeholder="Schrijf naam" id="username" type="text"></input> </li>
 		</ul>
+		<button id="start" onclick="goToHigscore();">Highscore</button>
+		<p id="jouwScore"> </p>
 	</div>
 	<script>
 		var mc = new Hammer(document.body);

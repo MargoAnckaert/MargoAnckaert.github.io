@@ -17,7 +17,13 @@ body {
 	overflow: hidden;
 	z-index: 0;
 }
-
+input{
+	margin: auto;
+	display: inline-block;
+	position: relative;
+	height: 25px;
+	margin-bottom: 0;
+}
 
 .ruimteschip {
 	display: block;

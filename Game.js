@@ -105,7 +105,8 @@ function Vuur() {
 		kogels.push(new kogel(X, 80));
 		setTimeout(resetVuren, 500);
 		vurenallowed = false;
-	} else {
+	}
+	else {
 		vurenallowed
 	}
 }
@@ -158,6 +159,8 @@ function DelEnemy() {
 		clearInterval(test);
 		vurenallowed = false;
 		gameEnded = true;
+		G_points = punten;
+		storeData();
 	}
 }
 
@@ -170,11 +173,12 @@ function gameover() {
 	clearInterval(test);
 	vurenallowed = false;
 	gameEnded = true;
+	G_points = punten;
+	storeData();
 }
+
 function reset() {
 	window.location = "index.html";
-	
-	
 }
 
 function createEnemy() {
@@ -277,26 +281,57 @@ function checkCollide() {
 	}
 }
 
-function startspel() {
-	"use strict";
-	$('#spelregels').remove();
-	$('h1').remove();
-	$('p').remove();
-	$('#start').remove();
-	level = document.body;
-	container = $('#container');
-	links = new Knop(NaarLinks, "Links");
-	rechts = new Knop(NaarRechts, "Rechts");
-	vuur = new Knop(Vuur, "Vuur");
-	ruimteschip = new Ruimteschip(500);
-	setInterval(moveBullet, 50);
-	setInterval(checkCollide, 50);
-	setInterval(beweeg, 500);
-	test2 = setInterval(DelEnemy, 100);
-	stop = setInterval(stopSpawn, 10);
-	//createEnemy();
-	test = setInterval(createEnemy, 1);
-	$('.Links').css('left', WindowWidth / 2 - 128);
-	$('.Rechts').css('left', WindowWidth / 2);
-	$('.Vuur').css('left', WindowWidth / 2 - 64);
+function showdata() {
+	db.transaction(function (tx) {
+		tx.executeSql('SELECT * FROM LOGS order by punten desc', [], function (tx, results) {
+			var len = results.rows.length
+				, i;
+			var antwoord = "";
+			for (i = 0; i < len; i++) {
+				if (i < 10) {
+					antwoord += results.rows.item(i).dNaam
+					antwoord += " " + results.rows.item(i).punten + "<br>"
+				}
+			}
+			$("#jouwScore").html(antwoord);
+		}, null);
+	});
 }
+function goToHigscore(){
+	window.location = "highscore.html";
+}
+function goBack(){
+		window.location = "index.html";
+}
+var str
+function startspel() {
+		"use strict";
+		var element = document.getElementById('username');
+		if (element != null) {
+			str = element.value;
+		}
+		else {
+			str = null;
+		}
+		createDatabase();
+		$('#spelregels').remove();
+		$('h1').remove();
+		$('p').remove();
+		$('#start').remove();
+		level = document.body;
+		container = $('#container');
+		links = new Knop(NaarLinks, "Links");
+		rechts = new Knop(NaarRechts, "Rechts");
+		vuur = new Knop(Vuur, "Vuur");
+		ruimteschip = new Ruimteschip(500);
+		setInterval(moveBullet, 50);
+		setInterval(checkCollide, 50);
+		setInterval(beweeg, 500);
+		test2 = setInterval(DelEnemy, 100);
+		stop = setInterval(stopSpawn, 10);
+		//createEnemy();
+		test = setInterval(createEnemy, 1);
+		$('.Links').css('left', WindowWidth / 2 - 128);
+		$('.Rechts').css('left', WindowWidth / 2);
+		$('.Vuur').css('left', WindowWidth / 2 - 64);
+	}
