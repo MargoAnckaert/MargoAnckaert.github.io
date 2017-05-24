@@ -7,7 +7,7 @@ var links;
 var rechts;
 var vuur;
 var fire = new Audio('sounds/Explosion.mp3');
-var fire.volume = 0;
+fire.volume = 0;
 var kogels = [];
 var Left = 0;
 var Bottom = 0;
