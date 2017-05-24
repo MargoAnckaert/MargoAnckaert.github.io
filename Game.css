@@ -1,0 +1,146 @@
+html {
+	height: 100%;
+	width: 100%;
+	margin:0;
+	padding:0;
+}
+
+body {
+	background-image: url(Img/background.jpg);
+	background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+	margin:0;
+	padding:0;
+	overflow: hidden;
+	z-index: 0;
+}
+
+
+.ruimteschip {
+	display: block;
+	position: absolute;
+	background-image: url(Img/ruimteschip2.png);
+	background-repeat: no-repeat;
+	width: 50px;
+	height: 50px;
+	bottom: 150px;
+	left: 0px;
+}
+
+
+
+.vijand {
+	display: block;
+	position: absolute;
+	background-image: url(Img/vijand.png);
+	background-repeat: no-repeat;
+	width: 98px;
+	height: 98px;
+
+}
+
+.Knop {
+	display: block;
+	width: 50px;
+	height: 50px;
+	background-repeat: no-repeat;
+	position: fixed;
+}
+
+.Rechts {
+	background-image: url(Img/Pijltje.png);
+	left: 364px;
+	bottom: 10px;
+	transform: rotate(180deg);
+	transform-origin: 50% 50% 0px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.Links {
+	background-image: url(Img/Pijltje.png);
+	
+	bottom: 10px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.Vuur {
+	background-image: url(Img/Pijltje.png);
+	left: 300px;
+	bottom: 74px;
+	
+	transform: rotate(90deg);
+	transform-origin: 50% 50% 0px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.kogel {
+	position: absolute;
+	width: 175px;
+	height: 175px;
+	
+	background-repeat: no-repeat;
+	background-image: url(Img/fireball2.gif);
+}
+
+#container{
+	z-index: 9999;	
+}
+#spelregels{
+	background-color: rgba(255,255,255,0.8);
+	width: 50%;
+	height: 80%;
+	margin: 0 auto;
+	display: block;
+}
+ul{
+	color: black;
+	text-align: center;
+	font-size: 30px;
+
+}
+li {
+	list-style:none;
+}
+
+h1 {
+	color: black;
+	text-align: center;
+	font-family: 'Love Ya Like A Sister', cursive;
+	font-size: 100px;
+	
+}
+h2 {
+	color: white;
+	text-align: center;
+	font-family: 'Love Ya Like A Sister', cursive;
+	font-size: 100px;
+	
+}
+p{
+	text-align: center;
+	color: black;
+	font-size: 30px;
+	
+}
+#start{
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	
+}
+
+#points{
+	color: white;
+	width: 20px;
+	height: 20px;	
+}
+.eindscore{
+	color: white;
+	font-size: 30px;
+}

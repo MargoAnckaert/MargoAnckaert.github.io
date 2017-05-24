@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> Space invaders</title>
+	<script src="jquery-3.1.1.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+	<script src="hammer.min.js"></script>
+	<script src="hammer-time.min.js"></script>
+	<script src="Game.js"></script>
+	<link rel="stylesheet" href="Game.css">
+	<link rel="shortcut icon" href="Img/spaceMonsters3.jpg">
+	<link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet"> 
+</head>
+
+<body>
+	<div id="container"> </div>
+	<div id="points"></div>
+	<div id="spelregels">
+		<h1> Space invaders</h1>
+		<p> Schiet zoveel mogelijk monsters af voor dat ze tot bij u raket zijn!</p>
+		<button id="start" onclick="startspel();">Start spel</button>
+		<ul>
+			<li>Pijltje omhoog - Vuur</li>
+			<li>Pijltje Links - Bewegen Links</li>
+			<li>Pijltje Rechts - Bewegen Rechts</li>
+		</ul>
+	</div>
+	<script>
+		var mc = new Hammer(document.body);
+		mc.get('swipe').set({
+			direction: Hammer.DIRECTION_ALL
+		});
+		document.addEventListener("DOMContentLoaded", function (event) {
+			mc.on("swipeleft", function () {
+				NaarLinks()
+			});
+			mc.on("swiperight", function () {
+				NaarRechts()
+			});
+			mc.on("tap", function () {
+				if (magVuren) {
+					Vuur();
+				}
+				magVuren = true;
+			});
+		});
+	</script>
+</body>
+
+</html>
