@@ -108,7 +108,6 @@ function Vuur() {
 		setTimeout(resetVuren, 500);
 		vurenallowed = false;
 		fire.currentTime = 0;
-		fire.volume = 0.2;
 		fire.play();
 	}
 	else {
