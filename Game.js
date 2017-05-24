@@ -7,6 +7,7 @@ var links;
 var rechts;
 var vuur;
 var fire = new Audio('sounds/Explosion.mp3');
+var fire.volume = 0;
 var kogels = [];
 var Left = 0;
 var Bottom = 0;
@@ -310,6 +311,7 @@ function goBack(){
 var str
 function startspel() {
 		"use strict";
+		fire.volume= 0.3;
 		var element = document.getElementById('username');
 		if (element != null) {
 			str = element.value;
