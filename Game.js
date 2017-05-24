@@ -108,7 +108,7 @@ function Vuur() {
 		setTimeout(resetVuren, 500);
 		vurenallowed = false;
 		fire.currentTime = 0;
-		fire.volume = 0.3;
+		fire.volume = 0.2;
 		fire.play();
 	}
 	else {
@@ -311,7 +311,7 @@ function goBack(){
 var str
 function startspel() {
 		"use strict";
-		fire.volume= 0.3;
+		fire.volume= 0.2;
 		var element = document.getElementById('username');
 		if (element != null) {
 			str = element.value;
