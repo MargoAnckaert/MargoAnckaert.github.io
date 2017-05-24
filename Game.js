@@ -6,6 +6,7 @@ var level;
 var links;
 var rechts;
 var vuur;
+var fire = new Audio('sounds/Explosion.mp3');
 var kogels = [];
 var Left = 0;
 var Bottom = 0;
@@ -105,6 +106,9 @@ function Vuur() {
 		kogels.push(new kogel(X, 80));
 		setTimeout(resetVuren, 500);
 		vurenallowed = false;
+		fire.currentTime = 0;
+		fire.volume = 0.3;
+		fire.play();
 	}
 	else {
 		vurenallowed
